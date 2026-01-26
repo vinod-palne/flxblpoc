@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="User Accessible Record Count">
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="User Id"
+                value={userId}
+                onchange={handleUserChange}>
+            </lightning-input>
+
+            <lightning-dual-listbox
+                label="Select Objects"
+                source-label="Available"
+                selected-label="Selected"
+                options={objectOptions}
+                value={selectedObjects}
+                onchange={handleObjectChange}>
+            </lightning-dual-listbox>
+
+            <template if:true={showOwdWarning}>
+                <div class="slds-m-top_small slds-text-color_warning">
+                    ⚠ Warning: One or more selected objects are not Private (OWD ≠ Private)
+                </div>
+            </template>
+
+            <lightning-button
+                label="Get Counts"
+                variant="brand"
+                class="slds-m-top_medium"
+                onclick={fetchCounts}>
+            </lightning-button>
+        </div>
+
+        <template if:true={results}>
+            <lightning-datatable
+                key-field="object"
+                data={results}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

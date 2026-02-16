@@ -5,11 +5,7 @@
       "default": true
     }
   ],
-<<<<<<< HEAD
   "name": "pocflexibl",
-=======
-  "name": "POC",
->>>>>>> 627670d1950b51911968e9005cc82d81ee9546da
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "65.0"

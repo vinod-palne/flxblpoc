@@ -21,4 +21,5 @@ jobs:
           sf org login sfdx-url --sfdx-url-file auth.txt --alias UAT
 
       - name: Deploy to Sandbox
-        run: sf project deploy start --target-org UAT --ignore-conflicts
+        run: sf project deploy start --target-org UAT --source-dir force-app --ignore-conflicts
+
